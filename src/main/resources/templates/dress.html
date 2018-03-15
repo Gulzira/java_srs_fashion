@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <br/>
+        <table class="table">
+            <tr>
+                <th>title</th>
+                <th>guest</th>
+                <th>price</th>
+                <th>summary</th>
+                <th>brand</th>
+            </tr>
+            <tr th:each = "dress : ${dresss}">
+                <td th:text = "${dress.title}">test</td>
+                <td th:text = "${dress.guest}">test</td>
+                <td th:text = "${dress.price}">test</td>
+                <td th:text = "${dress.summary}">test</td>
+                <td th:text = "${dress.brand}">test</td>
+
+                <td> <a th:href = "@{'/dress/deleteContact?id='+${dress.id}}">delete</a></td>
+                <td><a th:href = "@{/dress/add}"  role="button">add</a></td>
+                <td> <a th:href="@{'/dress/editDress?id='+${dress.id}}">Edit</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+
+</html>

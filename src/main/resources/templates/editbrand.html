@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="form-group">
+            <form action="#" th:action="@{/brand/editNotebookk}" th:object = "${brand}" method="POST">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" th:field = "*{id}" class="form-control" placeholder="Enter id" value="${brand.id}" />
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" th:field = "*{name}" class="form-control" placeholder="Enter name" value="${brand.namey}" />
+                <label for="strana">Strana Proizvoditel</label>
+                <input type="text" id="strana" name="strana" th:field = "*{strana}" class="form-control" placeholder="Enter your strana" value="${brand.strana}" />
+
+                <br/>
+                <button type="submit" class="btn btn-primary">Сақтау</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+</html>
